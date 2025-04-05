@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import SimpleApp from './SimpleApp';
 import reportWebVitals from './reportWebVitals';
 
 // Import Bootstrap CSS
@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <SimpleApp />
   </React.StrictMode>
 );
 
