@@ -3,7 +3,7 @@ import { Card, Form, Button, Row, Col, Alert, InputGroup } from 'react-bootstrap
 import { Formik, Field, FieldArray, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { prescriptionApi } from '../../services/api';
-import { Prescription, PrescriptionStatus } from '../../types';
+import { Prescription, PrescriptionStatus, MedicineStatus, LabReportStatus } from '../../types';
 import { toast } from 'react-toastify';
 import { FaPlus, FaMinus, FaFilePrescription } from 'react-icons/fa';
 
@@ -73,12 +73,12 @@ const PrescriptionForm: React.FC<PrescriptionFormProps> = ({
         medicines: medicines.map(med => ({
           ...med,
           id: Math.random().toString(36).substring(2, 15),
-          status: 'PENDING',
+          status: MedicineStatus.PENDING,
         })),
         labReports: labReports.map(report => ({
           ...report,
           id: Math.random().toString(36).substring(2, 15),
-          status: 'PENDING',
+          status: LabReportStatus.PENDING,
         })),
         status: PrescriptionStatus.PENDING,
       };
